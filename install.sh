@@ -124,12 +124,13 @@ else
   wget "https://raw.githubusercontent.com/tryoo127/udp-custom/main/config.json" -O /root/udp/config.json &>/dev/null
   chmod +x /root/udp/config.json
 
+  clear
+  echo ""
   echo ""
   print_center -ama "${a103:-setting up, please wait...}"
   sleep 3
   title "${a102:-Installation Successful}"
-  echo ""
-echo -e " \e[0;32mServer Will Automatically Reboot In 5 Seconds\e[0m"
-rm -r install.sh
-sleep 5
-reboot
+  print_center -ama "${a103:-  To show menu type: \nudp\n}"
+  msg -bar
+  time_reboot 5
+fi
